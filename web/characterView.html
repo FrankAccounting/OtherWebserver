@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>World Bible</title>
+</head>
+<body>
+<header class="header">
+    <img src="img/logo.jpg" height="177" width="236" alt="World Bible Logo">
+    <h1>Savage Builder</h1>
+</header>
+<nav class="navigation">
+    <p class="menu-item"><a href="index.html">Home</a></p>
+    <p class="menu-item"><a href="createHero.html">Characters</a></p>
+    <p class="menu-item"><a href="characterDelete.html">View All Characters</a></p>
+    <p class="menu-item"><a href="skills.html">Skills</a></p>
+    <p class="menu-item"><a href="characterDelete.html">Create Item(s)</a></p>
+    <p class="menu-item" id="create"><a href="create.html">World Building</a></p>
+</nav>
+
+<form>
+    <div class="character-view">
+        <img src="img/karbol.png" width="212" height="278" alt="Karbol the Seller"/>
+        <div class="character-info">
+            <label for="characterName">Name</label>
+            <input type="text" name="characterName" id="characterName" value="Name" required/>
+            <label for="characterOccupation">Occupation</label>
+            <input type="text" name="characterOccupation" id="characterOccupation" value="Job" required />
+            <label for="characterSex">Sex</label>
+            <input type="text" name="characterSex" id="characterSex" value="Male" required />
+            <input type="hidden" name="characterId" id="characterId" value="1"/>
+            <input type="submit" name="save" id="save" value="Save"/>
+        </div>
+
+        <div class="character-bio">
+
+            <h3>Bio</h3>
+            <textarea name="characterBio" cols="50" rows="10"> Enter a rough backstory </textarea>
+        </div>
+        <div class="character-quests">
+            <h3>edges and hinderances</h3>
+            <textarea name="characterBio" cols="50" rows="10">
+            </textarea>
+            <p><a href="skills.html"> Select Skills </a></p>
+
+        </div>
+        <p><a href="skills.html"> Select Skills </a></p>
+    </div>
+</form>
+
+</body>
+</html>
