@@ -11,9 +11,11 @@ import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-@WebServlet(name = "searchServlet",
-urlPatterns = "/search")
-public class searchServlet extends HttpServlet {
+
+
+@WebServlet(name = "ListServlet",
+        urlPatterns = "/list")
+public class ListServlet extends HttpServlet {
     private  final String  USER = "root";
     private  final String  PW = "root";
     private final String DATABASE_PATH = "/WEB-INF/lib/SavageWorlds";
@@ -34,16 +36,21 @@ public class searchServlet extends HttpServlet {
             String path = getServletContext().getRealPath(DATABASE_PATH);
             conn = DriverManager.getConnection(DRIVER_NAME + path, USER, PW);
 
-            pstmt = conn.prepareStatement("SELECT character_nm FROM player_character WHERE name = ?");
-
-            String searchTerm = request.getParameter("searchTerm");
-            pstmt.setString(1,searchTerm);
+            //SQL command to get all
+            pstmt = conn.prepareStatement("SELECT * FROM player_character");
+            //RUN command
             rset = pstmt.executeQuery();
+
             StringBuilder html = new StringBuilder("<html><body>");
 
+            //ITR over DB call
             while (rset.next()) {
-                int id = rset.getInt("char_ID");
-                html.append("<p>").append(id).append("</p>");
+                //For each line in responce
+                int id = rset.getInt("character_id");
+                String align = rset.getString("align");
+                String desc  = rset.getString("description");
+
+                html.append("<li>").append(id+", ").append(align+", ").append(desc+", ").append("</li>");
             }
 
             html.append("</body></html>");
