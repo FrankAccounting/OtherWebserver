@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 
 @WebServlet(name = "ListServlet",
-        urlPatterns = "/otherlist")
+        urlPatterns = "/list")
 public class ListServlet extends HttpServlet {
     private  final String  USER = "root";
     private  final String  PW = "root";

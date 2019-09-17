@@ -14,8 +14,8 @@ import java.sql.SQLException;
 
 
 
-@WebServlet(name = "ListServlet",
-        urlPatterns = "/list")
+@WebServlet(name = "OtherListServlet",
+        urlPatterns = "/otherlist")
 public class OtherListServlet extends HttpServlet {
     private final String  USER = "root";
     private final String  PW = "root";
@@ -41,20 +41,19 @@ public class OtherListServlet extends HttpServlet {
 
             rset =stmt.executeQuery("SELECT * FROM player_character");
 
-
-
-
-
             StringBuilder html = new StringBuilder("<html><body>");
 
             //ITR over DB call
             while (rset.next()) {
                 //For each line in responce
-                String name = rset.getString("character_nm");
                 int id = rset.getInt("character_id");
+                String name = rset.getString(2);
+
                 String align = rset.getString("align");
                 String desc  = rset.getString("description");
-                html.append("<li>").append(name+", ").append(id+", ").append(align+", ").append(desc+", ").append("</li>");
+                System.out.println(name);
+                html.append("<li>").append(id+", ").append(name+", ").append(align+", ").append(desc+", ").append(name+", ").append("</li>");
+
             }
 
             html.append("</body></html>");
