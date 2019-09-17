@@ -53,7 +53,9 @@ public class searchServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException ex) {
             response.getWriter().print(ex.getMessage());
         }
-
+        finally {
+            DatabaseUtils.closeAll(conn,pstmt,rset);
+        }
     }
 
 
