@@ -34,7 +34,7 @@ public class searchServlet extends HttpServlet {
             String path = getServletContext().getRealPath(DATABASE_PATH);
             conn = DriverManager.getConnection(DRIVER_NAME + path, USER, PW);
 
-            pstmt = conn.prepareStatement("SELECT character_nm FROM player_character WHERE name = ?");
+            pstmt = conn.prepareStatement("SELECT character_id FROM player_character WHERE character_nm = ?");
 
             String searchTerm = request.getParameter("searchTerm");
             pstmt.setString(1,searchTerm);
@@ -42,7 +42,7 @@ public class searchServlet extends HttpServlet {
             StringBuilder html = new StringBuilder("<html><body>");
 
             while (rset.next()) {
-                int id = rset.getInt("char_ID");
+                int id = rset.getInt("character_ID");
                 html.append("<p>").append(id).append("</p>");
             }
 
