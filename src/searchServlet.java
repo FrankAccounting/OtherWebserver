@@ -27,8 +27,7 @@ public class searchServlet extends HttpServlet {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rset = null;
-//look a comment
-
+//lost the comment
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
             String path = getServletContext().getRealPath(DATABASE_PATH);
