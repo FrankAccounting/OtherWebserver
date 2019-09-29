@@ -1,16 +1,29 @@
 package packagexml.beans;
 
-public class Gear {
-    int gearid = this.gearid;
-    String name = this.name;
-    int dmg = this.dmg;
-    int weight = this.weight;
-    String geardescrip = this.geardescrip;
-    int price = this.price;
-    int characterID = this.characterID;
+import packagexml.services.PriceCheck;
 
+public class Gear {
+    private int gearid;
+    private String name;
+    private int dmg;
+    private int weight;
+    private String geardescrip;
+    private int price;
+    private int characterID;
+    private String priceCheck;
+
+
+    //No Arg
     public Gear() {
     }
+
+    //One Arg, Seems kinda dumb why did i have to neame
+    // this var not to be privecheck?
+    public Gear(String priceCheck) {
+    String currentPrice = priceCheck;
+    }
+
+
 
     public int getGearid() {
         return gearid;
@@ -19,6 +32,15 @@ public class Gear {
     public void setGearid(int gearid) {
         this.gearid = gearid;
     }
+
+    public void setPriceCheck(String priceCheck) {
+        this.priceCheck = priceCheck;
+    }
+
+    public String showPriceCheck(String priceCheck) {
+        return priceCheck;
+    }
+
 
     public String getName() {
         return name;
