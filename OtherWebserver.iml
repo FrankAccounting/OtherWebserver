@@ -12,7 +12,11 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="ApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/applicationContext.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -50,6 +54,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Spring-4.3.18.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Spring-4.3.18.RELEASE" level="project" />
   </component>
 </module>
