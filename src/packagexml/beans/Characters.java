@@ -1,5 +1,9 @@
 package packagexml.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
+
 public class Characters {
     private int id = this.id;
     private String name = this.name;

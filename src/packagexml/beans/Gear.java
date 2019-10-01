@@ -1,7 +1,8 @@
 package packagexml.beans;
 
+import org.springframework.stereotype.Component;
 import packagexml.services.PriceCheck;
-
+@Component
 public class Gear {
     private int gearid;
     private String name;
@@ -10,7 +11,7 @@ public class Gear {
     private String geardescrip;
     private int price;
     private int characterID;
-    private String priceCheck;
+    private PriceCheck priceCheck;
 
 
     //No Arg
@@ -19,8 +20,8 @@ public class Gear {
 
     //One Arg, Seems kinda dumb why did i have to neame
     // this var not to be privecheck?
-    public Gear(String priceCheck) {
-    String currentPrice = priceCheck;
+    public Gear(PriceCheck pc) {
+    this.priceCheck = pc;
     }
 
 
@@ -33,12 +34,9 @@ public class Gear {
         this.gearid = gearid;
     }
 
-    public void setPriceCheck(String priceCheck) {
-        this.priceCheck = priceCheck;
-    }
 
-    public String showPriceCheck(String priceCheck) {
-        return priceCheck;
+    public String showPriceCheck() {
+        return priceCheck.getPrice();
     }
 
 

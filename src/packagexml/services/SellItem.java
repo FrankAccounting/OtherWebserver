@@ -1,12 +1,13 @@
 package packagexml.services;
+import org.springframework.stereotype.Component;
 
 
-import java.util.function.ToDoubleBiFunction;
 
+@Component
 public class SellItem implements PriceCheck {
     @Override
     public String getPrice() {
-        return "the item is currently wightless";
+        return "the item is currently priceless";
         //how to pass the actual item from the db?
     }
     // add set gold here

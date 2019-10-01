@@ -6,5 +6,7 @@
 
     <!-- enable component scanning -->
     <!-- Any class annotated as @Component is a bean and is created -->
-    <context:component-scan base-package=""/>
+    <context:component-scan base-package="packagexml.beans"/>
+    <context:component-scan base-package="packagexml.services"/>
+
 </beans>
