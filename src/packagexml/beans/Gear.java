@@ -1,5 +1,6 @@
 package packagexml.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import packagexml.services.PriceCheck;
 @Component
@@ -11,6 +12,7 @@ public class Gear {
     private String geardescrip;
     private int price;
     private int characterID;
+    @Autowired
     private PriceCheck priceCheck;
 
 
