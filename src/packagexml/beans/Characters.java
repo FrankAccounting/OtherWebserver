@@ -1,11 +1,15 @@
 package packagexml.beans;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 
 public class Characters {
+    @Value("${c1.id}")
     private int id = this.id;
+    @Value("${c1.name}")
+
     private String name = this.name;
     private String align = this.align;
     private int xp = this.xp;
