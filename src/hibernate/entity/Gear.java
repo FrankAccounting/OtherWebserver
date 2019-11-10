@@ -30,6 +30,69 @@ public class Gear {
     @Column(name = "CHARACTER_ID")
     private int charaterId;
 
+    public Gear() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getCharaterId() {
+        return charaterId;
+    }
+
+    public void setCharaterId(int charaterId) {
+        this.charaterId = charaterId;
+    }
+
+    @Override
+    public String toString() {
+        return "Gear{" +
+                "gearId=" + gearId +
+                ", name='" + name + '\'' +
+                ", damage=" + damage +
+                ", weight=" + weight +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", charaterId=" + charaterId +
+                '}';
+    }
 }
 
 

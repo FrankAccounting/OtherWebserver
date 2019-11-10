@@ -15,5 +15,30 @@ public class GearStore {
     @Column(name = "CHARACTER_ID")
     private int characterId;
 
+    public GearStore() {
+    }
 
+    public int getGearId() {
+        return gearId;
+    }
+
+    public void setGearId(int gearId) {
+        this.gearId = gearId;
+    }
+
+    public int getCharacterId() {
+        return characterId;
+    }
+
+    public void setCharacterId(int characterId) {
+        this.characterId = characterId;
+    }
+
+    @Override
+    public String toString() {
+        return "GearStore{" +
+                "gearId=" + gearId +
+                ", characterId=" + characterId +
+                '}';
+    }
 }
