@@ -35,11 +35,13 @@ public class HibernateApp {
             //newSessionApp.createGearStore();
             //newSessionApp.listPlayers();
             //newSessionApp.listGearStore();
-            //newSessionApp.listGear();       Does not close gracfully for sure
-            //newSessionApp.updateGear();      Breaks :c
+            //newSessionApp.listGear();       Does not close gracfully for sure  Forein Key error
+            //newSessionApp.updateGear();      Breaks :c    Forein Key error
             //newSessionApp.updatePlayers();
             //newSessionApp.updateGearStore();   //Runs but does not update
-            newSessionApp.deleteGear();
+            //newSessionApp.deleteGear();    //breaks   Forein Key error
+            //newSessionApp.deleteGearStore();
+            //newSessionApp.deletePlayer();   //Forein Key error
 
         } finally {
             newSessionApp.close();
