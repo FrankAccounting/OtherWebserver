@@ -18,6 +18,10 @@ public class GearStore {
     public GearStore() {
     }
 
+    public GearStore(int characterId) {
+        this.characterId = characterId;
+    }
+
     public int getGearId() {
         return gearId;
     }

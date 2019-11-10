@@ -48,6 +48,20 @@ public class PlayerCharacter {
     public PlayerCharacter() {
     }
 
+    public PlayerCharacter(String characterNm, String alignment, int xp, int money, int agility, int smarts, int spirit, int strength, int vigor, String picture, String description) {
+        this.characterNm = characterNm;
+        this.alignment = alignment;
+        this.xp = xp;
+        this.money = money;
+        this.agility = agility;
+        this.smarts = smarts;
+        this.spirit = spirit;
+        this.strength = strength;
+        this.vigor = vigor;
+        this.picture = picture;
+        Description = description;
+    }
+
     public int getCharacterId() {
         return characterId;
     }

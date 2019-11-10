@@ -28,9 +28,18 @@ public class Gear {
     private int price;
 
     @Column(name = "CHARACTER_ID")
-    private int charaterId;
+    private int characterId;
 
     public Gear() {
+    }
+
+    public Gear(String name, int damage, int weight, String description, int price, int characterId) {
+        this.name = name;
+        this.damage = damage;
+        this.weight = weight;
+        this.description = description;
+        this.price = price;
+        this.characterId = characterId;
     }
 
     public String getName() {
@@ -73,12 +82,12 @@ public class Gear {
         this.price = price;
     }
 
-    public int getCharaterId() {
-        return charaterId;
+    public int getCharacterId() {
+        return characterId;
     }
 
-    public void setCharaterId(int charaterId) {
-        this.charaterId = charaterId;
+    public void setCharacterId(int characterId) {
+        this.characterId = characterId;
     }
 
     @Override
@@ -90,7 +99,7 @@ public class Gear {
                 ", weight=" + weight +
                 ", description='" + description + '\'' +
                 ", price=" + price +
-                ", charaterId=" + charaterId +
+                ", characterId=" + characterId +
                 '}';
     }
 }
