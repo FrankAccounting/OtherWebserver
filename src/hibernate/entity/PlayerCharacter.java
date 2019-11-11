@@ -1,6 +1,8 @@
 package hibernate.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "player_character")
@@ -46,6 +48,31 @@ public class PlayerCharacter {
     private String Description;
 
     public PlayerCharacter() {
+    }
+
+
+    @ManyToMany(cascade = CascadeType.ALL)
+
+    // I choose many to many because many columns in the "gear table" need to map with many items in the "character id" table.
+    // I chose to cascade all becasue when player charcters are deleted they should also be deleted from the
+    // the gear store, if not the ID's would liger after deletion
+    @JoinTable(name="GEAR_STORE",
+            joinColumns = @JoinColumn(name="CHARACTER_ID"),
+            inverseJoinColumns = @JoinColumn(name="GEAR_ID"))
+    private List<Gear> gearList;
+
+    public void add(Gear tempGear){
+        if (tempGear == null)
+            gearList = new ArrayList<>();
+        gearList.add(tempGear);
+    }
+
+    public List<Gear> getGearList() {
+        return gearList;
+    }
+
+    public void setGearList(List<Gear> gearList) {
+        this.gearList = gearList;
     }
 
     public PlayerCharacter(String characterNm, String alignment, int xp, int money, int agility, int smarts, int spirit, int strength, int vigor, String picture, String description) {
@@ -173,6 +200,7 @@ public class PlayerCharacter {
                 ", vigor=" + vigor +
                 ", picture='" + picture + '\'' +
                 ", Description='" + Description + '\'' +
+                ", gearList=" + gearList.size() +
                 '}';
     }
 }

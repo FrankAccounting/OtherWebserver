@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "GEAR")
-
 public class Gear {
 
     @Id
@@ -27,19 +26,15 @@ public class Gear {
     @Column(name = "PRICE")
     private int price;
 
-    @Column(name = "CHARACTER_ID")
-    private int characterId;
-
     public Gear() {
     }
 
-    public Gear(String name, int damage, int weight, String description, int price, int characterId) {
+    public Gear(String name, int damage, int weight, String description, int price) {
         this.name = name;
         this.damage = damage;
         this.weight = weight;
         this.description = description;
         this.price = price;
-        this.characterId = characterId;
     }
 
     public String getName() {
@@ -82,13 +77,9 @@ public class Gear {
         this.price = price;
     }
 
-    public int getCharacterId() {
-        return characterId;
-    }
 
-    public void setCharacterId(int characterId) {
-        this.characterId = characterId;
-    }
+
+
 
     @Override
     public String toString() {
@@ -99,7 +90,6 @@ public class Gear {
                 ", weight=" + weight +
                 ", description='" + description + '\'' +
                 ", price=" + price +
-                ", characterId=" + characterId +
                 '}';
     }
 }

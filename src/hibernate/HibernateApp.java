@@ -33,9 +33,9 @@ public class HibernateApp {
             //newSessionApp.createPlayer();
             //newSessionApp.createGear();
             //newSessionApp.createGearStore();
-            //newSessionApp.listPlayers();
+            newSessionApp.listPlayers();
             //newSessionApp.listGearStore();
-            //newSessionApp.listGear();       Does not close gracfully for sure  Forein Key error
+            //newSessionApp.listGear();
             //newSessionApp.updateGear();      Breaks :c    Forein Key error
             //newSessionApp.updatePlayers();
             //newSessionApp.updateGearStore();   //Runs but does not update
@@ -63,7 +63,7 @@ public class HibernateApp {
         Session session = factory.getCurrentSession();
         session.beginTransaction();
 
-        Gear pen = new Gear("pen", 1, 1, "A pointy object", 1,2);
+        Gear pen = new Gear("pen", 1, 1, "A pointy object", 1);
 
         session.save(pen);
 
@@ -90,6 +90,11 @@ public class HibernateApp {
 
         List<PlayerCharacter> allPlayers = session.createQuery("from PlayerCharacter").getResultList();
 
+        for (PlayerCharacter pc : allPlayers){
+            System.out.print(pc);
+        }
+
+
         System.out.print(allPlayers.iterator());
 
         session.getTransaction().commit();
@@ -98,8 +103,8 @@ public class HibernateApp {
     private void listGear() {
         Session session = factory.getCurrentSession();
         session.beginTransaction();
-
         List<Gear> allGear = session.createQuery("from Gear").getResultList();
+
 
         System.out.print(allGear.iterator());
 
