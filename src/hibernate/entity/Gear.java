@@ -11,6 +11,7 @@ public class Gear {
     @Column(name = "GEAR_ID")
     private int gearId;
 
+
     @Column(name = "NAME")
     private String name;
 
