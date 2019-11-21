@@ -1,8 +1,8 @@
-package dao;
+package service;
 
 import hibernate.entity.Gear;
 
-public interface GearDao {
+public interface GearService {
     void createGear (Gear gear);
     public void listGear(Gear gear);
     public void deleteGear(Gear gear);

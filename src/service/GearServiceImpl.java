@@ -1,14 +1,16 @@
-package dao;
+package service;
+import dao.GearDao;
 import hibernate.entity.Gear;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Repository
-public class GearDaoImpl implements GearDao {
+@Service
+public class GearServiceImpl implements GearService {
     @Autowired
     private SessionFactory sessionFactory;
     @Override

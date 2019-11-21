@@ -1,10 +1,10 @@
-package dao;
+package service;
 
 import hibernate.entity.PlayerCharacter;
 
 import java.util.List;
 
-public interface PlayerCharacterDao {
+public interface PlayerCharacterService {
     public void createPlayer(PlayerCharacter playerCharacter);
 
     List<PlayerCharacter> listPlayers();
