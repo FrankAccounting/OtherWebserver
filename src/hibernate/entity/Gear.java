@@ -2,6 +2,14 @@ package hibernate.entity;
 
 import javax.persistence.*;
 
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 @Entity
 @Table (name = "GEAR")
 public class Gear {
@@ -11,9 +19,11 @@ public class Gear {
     @Column(name = "GEAR_ID")
     private int gearId;
 
-
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 30,  message = "1-30 characters")
     @Column(name = "NAME")
     private String name;
+
 
     @Column(name = "DMG")
     private int damage;
@@ -21,6 +31,8 @@ public class Gear {
     @Column(name = "WEIGHT")
     private int weight;
 
+    @NotNull
+    @Size(min = 1, max = 30,  message = "1-30 characters")
     @Column(name = "DESCRIPTION")
     private String description;
 

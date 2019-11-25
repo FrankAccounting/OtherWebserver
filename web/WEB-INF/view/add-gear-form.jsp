@@ -26,7 +26,7 @@
     <td><form:input path="name"/></td>
 </tr>
 <tr>
-    <td><label>descript</label></td>
+    <td><label>description</label></td>
     <td><form:input path="description"/></td>
 
     <td><label>damage</label></td>
@@ -37,6 +37,11 @@
 
     <td><label>weight</label></td>
     <td><form:input path="weight"/></td>
+</tr>
+
+<tr>
+    <td></td>
+    <td><input type="submit"  value="Save"   class="save"></td>
 </tr>
 
 </body>

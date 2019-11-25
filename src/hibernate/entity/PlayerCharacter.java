@@ -1,6 +1,8 @@
 package hibernate.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,8 @@ public class PlayerCharacter {
     @Column(name = "CHARACTER_ID")
     private int characterId;
 
+    @NotNull
+    @Size(min = 1, max = 30,  message = "1-30 characters")
     @Column(name = "CHARACTER_NM")
     private String characterNm;
 
@@ -44,6 +48,9 @@ public class PlayerCharacter {
     @Column(name = "Picture")
     private String picture;
 
+
+    @NotNull
+    @Size(min = 1, max = 30,  message = "1-30 characters")
     @Column(name = "Description")
     private String Description;
 
