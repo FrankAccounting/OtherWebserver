@@ -4,12 +4,15 @@ import hibernate.entity.Gear;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import service.GearService;
 import service.GearServiceImpl;
 import service.PlayerCharacterService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -33,11 +36,24 @@ public class GearController{
 
         theModel.addAttribute("aGear",newGear);
         return "add-gear-form";
-
-
     }
 
+    @RequestMapping("/save")
+    public String createGear(
+            @Valid @ModelAttribute("gear") Gear newGear,
+            BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "add-gear-form";
+        }
+        gearService.createGear(newGear);
+        return "redirect:/donut/list";
+    }
 
+    @RequestMapping("/showUpdateGearForm")
+    public String showUpdategearForm(@RequestParam("gearId")                    int theId,                    Model theModel) {
+        Gear theGear = gearService.getGear(theId);
+        theModel.addAttribute("agear", theGear);
+        return "add-gear-form";
 
 
 }

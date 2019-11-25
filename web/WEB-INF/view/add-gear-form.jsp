@@ -24,10 +24,14 @@
 <tr>
     <td><label>name</label></td>
     <td><form:input path="name"/></td>
+    <form:errors path="name" cssClass="error"/>
+
 </tr>
 <tr>
     <td><label>description</label></td>
     <td><form:input path="description"/></td>
+    <form:errors path="description" cssClass="error"/>
+
 
     <td><label>damage</label></td>
     <td><form:input path="damage"/></td>

@@ -24,6 +24,15 @@
             <input type="submit" value="Search" class="add-button">
         </form:form>
 
+
+        <th>Action</th>
+        <!-- ... -->
+        <td><a href="">Update</a></td>
+        <th>Action</th>
+        <!-- ... -->
+        <td><a href="">Update</a></td>
+
+
         <table>
             <tr>
                 <th></th>
