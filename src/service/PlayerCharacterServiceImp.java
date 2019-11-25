@@ -8,33 +8,53 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 
 @Service
     public class PlayerCharacterServiceImp implements PlayerCharacterService {
         @Autowired
-        private PlayerCharacterDao aPlayerCharacterDao;
+        private SessionFactory sessionFactory;
 
         @Override
+        @Transactional
         public void createPlayer(PlayerCharacter playerCharacter) {
-            aPlayerCharacterDao.createPlayer(playerCharacter);
+            Session session = sessionFactory.getCurrentSession();
+            session.save(playerCharacter);
         }
 
+
+        @Transactional
         public PlayerCharacter getPlayerCharacter(int ID){
-            return aPlayerCharacterDao.getPlayerCharacter(ID);
+            Session session = sessionFactory.getCurrentSession();
+
+            return session.get(PlayerCharacter.class,ID);
         }
 
+        @Transactional
         public List<PlayerCharacter> listPlayers() {
-            return aPlayerCharacterDao.listPlayers();
+            Session session = sessionFactory.getCurrentSession();
+            List<PlayerCharacter> allPlayers = session.createQuery("from PlayerCharacter", PlayerCharacter.class).getResultList();
+            System.out.print(allPlayers.iterator());
+            return allPlayers;
         }
 
+        @Transactional
         public void deletePlayer(int ID) {
-            aPlayerCharacterDao.deletePlayer(ID);
+            Session session = sessionFactory.getCurrentSession();
+            PlayerCharacter aPlayerCharacter = session.get(PlayerCharacter.class,ID);
+
+            if (aPlayerCharacter != null)
+                session.delete(aPlayerCharacter);
             }
 
-         public void updatePlayers(PlayerCharacter playerCharacter) {
-            aPlayerCharacterDao.updatePlayers(playerCharacter);
+        @Transactional
+        public void updatePlayers(PlayerCharacter playerCharacter) {
+            Session session = sessionFactory.getCurrentSession();
+            PlayerCharacter aPlayerCharacter = session.get(PlayerCharacter.class,1);
+
+            if (aPlayerCharacter != null)
+                aPlayerCharacter.setDescription(aPlayerCharacter.getDescription() + "it worked again");
             }
     }
-

@@ -22,15 +22,18 @@ public class GearDaoImpl implements GearDao {
     }
 
 
-    public void listGear(Gear gear) {
+    public List<Gear>listGear() {
         Session session = sessionFactory.getCurrentSession();
         List<Gear> allGear = session.createQuery("from Gear",Gear.class).getResultList();
+
         System.out.print(allGear.iterator());
+
+        return allGear;
     }
 
-    public void deleteGear(Gear gear) {
+    public void deleteGear(int ID) {
         Session session = sessionFactory.getCurrentSession();
-        Gear aPeiceOfGear = session.get(Gear.class, 1);
+        Gear aPeiceOfGear = session.get(Gear.class, ID);
 
         if (aPeiceOfGear != null)
             session.delete(aPeiceOfGear);

@@ -2,12 +2,15 @@ package dao;
 
 import hibernate.entity.Gear;
 
+import java.util.List;
+
 public interface GearDao {
     void createGear (Gear gear);
-    public void listGear(Gear gear);
-    public void deleteGear(Gear gear);
-    public void updateGear(Gear gear);
+    List<Gear> listGear();
+    void deleteGear(int ID);
     Gear getGear(int ID);
-
+    void updateGear(Gear gear);
 
 }
+
+
