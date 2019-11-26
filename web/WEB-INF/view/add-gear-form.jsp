@@ -16,28 +16,24 @@
 <form:form action="save"
            modelAttribute="aGear">
     <table>
+        <tr>
+            <td><label>name</label></td>
+            <td><form:input path="name"/></td>
+        </tr>
+        <tr>
+            <td><label>descript</label></td>
+            <td><form:input path="description"/></td>
+
+            <td><label>damage</label></td>
+            <td><form:input path="damage"/></td>
+
+            <td><label>price</label></td>
+            <td><form:input path="price"/></td>
+
+            <td><label>weight</label></td>
+            <td><form:input path="weight"/></td>
+        </tr>
     </table>
 </form:form>
-
-
-
-<tr>
-    <td><label>name</label></td>
-    <td><form:input path="name"/></td>
-</tr>
-<tr>
-    <td><label>descript</label></td>
-    <td><form:input path="description"/></td>
-
-    <td><label>damage</label></td>
-    <td><form:input path="damage"/></td>
-
-    <td><label>price</label></td>
-    <td><form:input path="price"/></td>
-
-    <td><label>weight</label></td>
-    <td><form:input path="weight"/></td>
-</tr>
-
 </body>
 </html>

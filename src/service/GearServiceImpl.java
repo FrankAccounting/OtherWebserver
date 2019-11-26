@@ -13,6 +13,8 @@ import java.util.List;
 public class GearServiceImpl implements GearService {
     @Autowired
     private SessionFactory sessionFactory;
+
+
     @Override
     @Transactional
     public void createGear(Gear gear) {
