@@ -33,11 +33,11 @@ public class GearDaoImpl implements GearDao {
         return allGear;
     }
 
-    public void deleteGear(int ID) {
+    public void deleteGear(int theId) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("delete from Gear where id = :doomedGear");
+        Query query = session.createQuery("delete from Gear where id =:doomedGear");
 
-        query.setParameter("doomedGear", ID);
+        query.setParameter("doomedGear", theId);
 
     }
 

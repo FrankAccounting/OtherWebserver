@@ -9,7 +9,7 @@
 
 <form:form action="save"
            modelAttribute="aGear">
-    <form:hidden path="ID" value="${aGear.theID}"/>
+    <form:hidden path="ID" value="${aGear.ID}"/>
 
     <table>
         <tr>

@@ -39,8 +39,8 @@ public class GearServiceImpl implements GearService {
     }
 
     @Transactional
-    public void deleteGear(int ID) {
-        gearDao.deleteGear(ID);
+    public void deleteGear(int theID) {
+        gearDao.deleteGear(theID);
     }
 
 
