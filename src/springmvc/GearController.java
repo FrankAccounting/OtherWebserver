@@ -46,13 +46,13 @@ public class GearController {
             return "add-gear-form";
         }
         gearService.createGear(newGear);
-        return "redirect:/donut/list";
+        return "redirect:/gear/list";
     }
 
     @RequestMapping("/showUpdateGearForm")
     public String showUpdategearForm(@RequestParam("gearId") int theId, Model theModel) {
         Gear theGear = gearService.getGear(theId);
-        theModel.addAttribute("agear", theGear);
+        theModel.addAttribute("aGear", theGear);
         return "add-gear-form";
 
 

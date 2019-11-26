@@ -14,11 +14,13 @@ public class GearDaoImpl implements GearDao {
     @Override
     public void createGear(Gear gear) {
             Session session = sessionFactory.getCurrentSession();
-            session.save(gear);
+            session.saveOrUpdate(gear);
         }
-    public Gear getGear(int ID){
+
+    @Override
+    public Gear getGear(int theID){
         Session session = sessionFactory.getCurrentSession();
-        return session.get(Gear.class, ID);
+        return session.get(Gear.class, theID);
     }
 
 

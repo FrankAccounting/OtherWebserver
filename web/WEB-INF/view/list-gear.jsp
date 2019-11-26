@@ -24,13 +24,9 @@
             <input type="submit" value="Search" class="add-button">
         </form:form>
 
-
-        <th>Action</th>
-        <!-- ... -->
-        <td><a href="">Update</a></td>
-        <th>Action</th>
-        <!-- ... -->
-        <td><a href="">Update</a></td>
+        <c:url var="updateLink"  value="/gear/showUpdateGearForm">
+            <c:param name="gearId" value="${tempGear}" />
+        </c:url>
 
 
         <table>
@@ -43,8 +39,9 @@
                 <th>Weight</th>
             </tr>
 
-            <c:forEach var="tempGear" items="${gearList}">
+]
 
+            <c:forEach var="tempGear" items="${gearList}">
                 <tr>
                     <td>
 
@@ -54,9 +51,16 @@
                     <td>${tempGear.damage}</td>
                     <td>${tempGear.price}</td>
                     <td>${tempGear.weight}</td>
+                    <td>${tempGear.ID}</td>
+                    <c:url var="updateLink"  value="/gear/showUpdateGearForm">
+                        <c:param name="gearId" value="${tempGear.ID}" />
+                    </c:url>
+
+                    <a href="${updateLink}">Update</a>
 
                 </tr>
             </c:forEach>
+
         </table>
     </div>
 </div>

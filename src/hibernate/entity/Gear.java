@@ -2,13 +2,8 @@ package hibernate.entity;
 
 import javax.persistence.*;
 
-import javax.persistence.*;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table (name = "GEAR")
@@ -104,6 +99,10 @@ public class Gear {
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public int getID() {
+        return gearId;
     }
 }
 

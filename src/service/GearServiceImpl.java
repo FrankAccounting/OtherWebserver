@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
+
 @Service
 public class GearServiceImpl implements GearService {
     @Autowired
@@ -19,10 +20,12 @@ public class GearServiceImpl implements GearService {
         Session session = sessionFactory.getCurrentSession();
         session.save(gear);
     }
+
+    @Override
     @Transactional
-    public Gear getGear(int ID){
-        Session session = sessionFactory.getCurrentSession();
-        return session.get(Gear.class, ID);
+    public Gear getGear(int theId) {
+        return GearDao.getGear(theId);
+
     }
 
     @Transactional
