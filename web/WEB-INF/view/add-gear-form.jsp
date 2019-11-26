@@ -9,37 +9,38 @@
 
 <form:form action="save"
            modelAttribute="aGear">
+    <form:hidden path="ID" value="${aGear.theID}"/>
+
     <table>
+        <tr>
+            <td><label>name</label></td>
+            <td><form:input path="name"/></td>
+        </tr>
+        <tr>
+            <td><label>descript</label></td>
+            <td><form:input path="description"/></td>
+
+            <td><label>damage</label></td>
+            <td><form:input path="damage"/></td>
+
+            <td><label>price</label></td>
+            <td><form:input path="price"/></td>
+
+            <td><label>weight</label></td>
+            <td><form:input path="weight"/></td>
+
+
+        </tr>
     </table>
 </form:form>
 
 
 
 <tr>
-    <td><label>name</label></td>
-    <td><form:input path="name"/></td>
-    <form:errors path="name" cssClass="error"/>
-
-</tr>
-<tr>
-    <td><label>description</label></td>
-    <td><form:input path="description"/></td>
-    <form:errors path="description" cssClass="error"/>
-
-
-    <td><label>damage</label></td>
-    <td><form:input path="damage"/></td>
-
-    <td><label>price</label></td>
-    <td><form:input path="price"/></td>
-
-    <td><label>weight</label></td>
-    <td><form:input path="weight"/></td>
-</tr>
-
-<tr>
     <td></td>
-    <td><input type="submit"  value="Save"   class="save"></td>
+    <td><input type="submit"
+               value="Save"
+               class="save"></td>
 </tr>
 
 </body>

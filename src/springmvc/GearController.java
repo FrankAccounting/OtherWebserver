@@ -54,7 +54,15 @@ public class GearController {
         Gear theGear = gearService.getGear(theId);
         theModel.addAttribute("aGear", theGear);
         return "add-gear-form";
-
-
     }
+
+    @RequestMapping("/delete")
+    public String deleteGear(
+            @RequestParam("gearID") int theId){
+        gearService.deleteGear(theId);
+        return "redirect:/gear/list";
+    }
+
+
+
 }

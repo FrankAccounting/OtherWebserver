@@ -13,44 +13,37 @@ import java.util.List;
 @Service
 public class GearServiceImpl implements GearService {
     @Autowired
-    private SessionFactory sessionFactory;
+    private GearDao gearDao;
     @Override
     @Transactional
     public void createGear(Gear gear) {
-        Session session = sessionFactory.getCurrentSession();
-        session.save(gear);
+        gearDao.createGear(gear);
     }
 
     @Override
     @Transactional
     public Gear getGear(int theId) {
-        return GearDao.getGear(theId);
+        return gearDao.getGear(theId);
 
     }
+
+    @Override
+    public void updateGear(Gear gear) {
+
+    }
+
 
     @Transactional
     public List<Gear>listGear() {
-        Session session = sessionFactory.getCurrentSession();
-        List<Gear> allGear = session.createQuery("from Gear",Gear.class).getResultList();
-        System.out.print(allGear.iterator());
-
-        return allGear;
+        return gearDao.listGear();
     }
+
     @Transactional
     public void deleteGear(int ID) {
-        Session session = sessionFactory.getCurrentSession();
-        Gear aPeiceOfGear = session.get(Gear.class, ID);
+        gearDao.deleteGear(ID);
+    }
 
-        if (aPeiceOfGear != null)
-            session.delete(aPeiceOfGear);
-    }
-    @Transactional
-    public void updateGear(Gear gear) {
-        Session session = sessionFactory.getCurrentSession();
-        Gear aPeiceOfGear = session.get(Gear.class, 1);
-        if (aPeiceOfGear != null)
-            aPeiceOfGear.setDescription(aPeiceOfGear.getDescription() + "it worked");
-    }
+
 
 
 

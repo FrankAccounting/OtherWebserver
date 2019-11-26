@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+import org.hibernate.query.Query;
 import java.util.List;
 
 @Repository
@@ -35,10 +35,10 @@ public class GearDaoImpl implements GearDao {
 
     public void deleteGear(int ID) {
         Session session = sessionFactory.getCurrentSession();
-        Gear aPeiceOfGear = session.get(Gear.class, ID);
+        Query query = session.createQuery("delete from Gear where id = :doomedGear");
 
-        if (aPeiceOfGear != null)
-            session.delete(aPeiceOfGear);
+        query.setParameter("doomedGear", ID);
+
     }
 
     public void updateGear(Gear gear) {
