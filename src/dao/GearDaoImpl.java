@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+import org.hibernate.query.Query;
 import java.util.List;
 
 @Repository
@@ -14,11 +14,13 @@ public class GearDaoImpl implements GearDao {
     @Override
     public void createGear(Gear gear) {
             Session session = sessionFactory.getCurrentSession();
-            session.save(gear);
+            session.saveOrUpdate(gear);
         }
-    public Gear getGear(int ID){
+
+    @Override
+    public Gear getGear(int theID){
         Session session = sessionFactory.getCurrentSession();
-        return session.get(Gear.class, ID);
+        return session.get(Gear.class, theID);
     }
 
 
@@ -31,12 +33,12 @@ public class GearDaoImpl implements GearDao {
         return allGear;
     }
 
-    public void deleteGear(int ID) {
+    public void deleteGear(int theId) {
         Session session = sessionFactory.getCurrentSession();
-        Gear aPeiceOfGear = session.get(Gear.class, ID);
+        Query query = session.createQuery("delete from Gear where id =:doomedGear");
 
-        if (aPeiceOfGear != null)
-            session.delete(aPeiceOfGear);
+        query.setParameter("doomedGear", theId);
+
     }
 
     public void updateGear(Gear gear) {

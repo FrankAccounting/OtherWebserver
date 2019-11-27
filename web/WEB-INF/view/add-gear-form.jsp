@@ -1,11 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: sstan
-  Date: 11/24/2019
-  Time: 11:17 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,6 +9,8 @@
 
 <form:form action="save"
            modelAttribute="aGear">
+    <form:hidden path="ID" value="${aGear.ID}"/>
+
     <table>
         <tr>
             <td><label>name</label></td>
@@ -32,8 +28,20 @@
 
             <td><label>weight</label></td>
             <td><form:input path="weight"/></td>
+
+
         </tr>
     </table>
 </form:form>
+
+
+
+<tr>
+    <td></td>
+    <td><input type="submit"
+               value="Save"
+               class="save"></td>
+</tr>
+
 </body>
 </html>
