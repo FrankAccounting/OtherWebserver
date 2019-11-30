@@ -1,12 +1,11 @@
 package hibernate.entity;
 
 import javax.persistence.*;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table (name = "GEAR")
+@Table(name = "GEAR")
 public class Gear {
 
     @Id
@@ -15,7 +14,7 @@ public class Gear {
     private int gearId;
 
     @NotNull(message = "Required")
-    @Size(min = 1, max = 30,  message = "1-30 characters")
+    @Size(min = 1, max = 30, message = "1-30 characters")
     @Column(name = "NAME")
     private String name;
 
@@ -27,7 +26,7 @@ public class Gear {
     private int weight;
 
     @NotNull
-    @Size(min = 1, max = 30,  message = "1-30 characters")
+    @Size(min = 1, max = 30, message = "1-30 characters")
     @Column(name = "DESCRIPTION")
     private String description;
 
@@ -84,9 +83,6 @@ public class Gear {
     public void setPrice(int price) {
         this.price = price;
     }
-
-
-
 
 
     @Override

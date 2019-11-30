@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Mon Nov 11 17:41:34 CST 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.1.3 - (1853019): instance a816c00e-016e-5cd8-0f50-00000bb451e8 
-on database directory C:\Users\sstan\IdeaProjects\OtherWebserver\lib\SavageWorlds with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
-Loaded from file:/C:/Users/sstan/IdeaProjects/OtherWebserver/lib/derby.jar
+Sat Nov 30 16:02:20 CST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.1.3 - (1853019): instance a816c00e-016e-be56-0ce6-00000b9ff600 
+on database directory C:\Users\moogi\IdeaProjects\SStanek\lib\SavageWorlds with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
+Loaded from file:/C:/Users/moogi/IdeaProjects/SStanek/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=12.0.1+12
-user.dir=C:\Users\sstan\IdeaProjects\OtherWebserver
+java.runtime.version=12.0.2+10
+user.dir=C:\Users\moogi\IdeaProjects\SStanek
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
