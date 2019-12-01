@@ -19,10 +19,13 @@ public class Gear {
     @Column(name = "NAME")
     private String name;
 
-
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 3,  message = "1-3 characters")
     @Column(name = "DMG")
     private int damage;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 3,  message = "1-3 characters")
     @Column(name = "WEIGHT")
     private int weight;
 
@@ -31,6 +34,8 @@ public class Gear {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 7,  message = "1-7 characters")
     @Column(name = "PRICE")
     private int price;
 

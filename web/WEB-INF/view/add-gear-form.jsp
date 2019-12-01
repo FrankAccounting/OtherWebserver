@@ -7,40 +7,51 @@
 </head>
 <body>
 
-<form:form action="save"
-           modelAttribute="aGear">
+<form:form action="save" modelAttribute="aGear">
     <form:hidden path="ID" value="${aGear.ID}"/>
 
     <table>
         <tr>
             <td><label>name</label></td>
-            <td><form:input path="name"/></td>
+            <td><form:input path="name"/>
+                <form:errors path="name" cssClass="error"/></td>
         </tr>
         <tr>
             <td><label>descript</label></td>
-            <td><form:input path="description"/></td>
+            <td><form:input path="description"/>
+                <form:errors path="description" cssClass="error"/></td>
+
 
             <td><label>damage</label></td>
-            <td><form:input path="damage"/></td>
+            <td><form:input path="damage"/>
+                <form:errors path="damage" cssClass="error"/></td>
+
 
             <td><label>price</label></td>
-            <td><form:input path="price"/></td>
+            <td><form:input path="price"/>
+                <form:errors path="price" cssClass="error"/></td>
+
 
             <td><label>weight</label></td>
-            <td><form:input path="weight"/></td>
+            <td><form:input path="weight"/>
+                <form:errors path="weight" cssClass="error"/></td>
+
 
 
         </tr>
     </table>
+
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Save" class="save"></td>
+    </tr>
 </form:form>
 
 
 
 <tr>
     <td></td>
-    <td><input type="submit"
-               value="Save"
-               class="save"></td>
+    <td><input type="submit" value="Save" class="save"></td>
 </tr>
 
 </body>

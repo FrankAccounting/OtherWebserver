@@ -38,6 +38,8 @@ public class GearDaoImpl implements GearDao {
         Query query = session.createQuery("delete from Gear where id =:doomedGear");
 
         query.setParameter("doomedGear", theId);
+        query.executeUpdate();
+
 
     }
 

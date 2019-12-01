@@ -58,7 +58,7 @@ public class GearController {
 
     @RequestMapping("/delete")
     public String deleteGear(
-            @RequestParam("gearID") int theId){
+            @RequestParam("gearId") int theId){
         gearService.deleteGear(theId);
         return "redirect:/gear/list";
     }

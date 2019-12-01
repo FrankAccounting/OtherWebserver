@@ -21,27 +21,44 @@ public class PlayerCharacter {
     @Column(name = "CHARACTER_NM")
     private String characterNm;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 3,  message = "1-3 characters")
     @Column(name = "ALIGN")
     private String alignment;
 
+
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 7,  message = "1-7 characters")
     @Column(name = "XP")
     private int xp;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 30,  message = "1-30 characters")
     @Column(name = "MONEY")
     private int money;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 2,  message = "1-2 characters")
     @Column(name = "AGILITY")
     private int agility;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 2,  message = "1-2 characters")
     @Column(name = "SMARTS")
     private int smarts;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 2,  message = "1-2 characters")
     @Column(name = "SPIRIT")
     private int spirit;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 2,  message = "1-2 characters")
     @Column(name = "STRENGTH")
     private int strength;
 
+    @NotNull(message = "Required")
+    @Size(min = 1, max = 2,  message = "1-2 characters")
     @Column(name = "VIGOR")
     private int vigor;
 
