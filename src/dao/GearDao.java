@@ -10,7 +10,7 @@ public interface GearDao {
     List<Gear> listGear();
     void deleteGear(int ID);
     void updateGear(Gear gear);
-
+    List<Gear> getGearByName(String theSearchTerm);
 }
 
 

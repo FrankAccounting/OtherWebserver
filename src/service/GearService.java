@@ -11,6 +11,7 @@ public interface GearService {
     Gear getGear(int theID);
     void updateGear(Gear gear);
 
+    List<Gear> getGearByName(String theSeachTerm);
 }
 
 

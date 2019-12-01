@@ -33,6 +33,13 @@ public class GearServiceImpl implements GearService {
     }
 
 
+    @Override
+    @Transactional
+    public List<Gear> getGearByName(String theSearchTerm){
+        return gearDao.getGearByName(theSearchTerm);
+    }
+
+
     @Transactional
     public List<Gear>listGear() {
         return gearDao.listGear();
