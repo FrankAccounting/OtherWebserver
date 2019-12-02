@@ -9,6 +9,8 @@
 <header class="header">
     <img src="img/logo.jpg" height="177" width="236" alt="World Bible Logo">
     <h1>Savage Builder</h1>
+    <h2>http://localhost:8080/dragon/gear/list  for final stuff</h2>
+
 </header>
 <nav class="navigation">
     <p class="menu-item"><a href="index.html">Home</a></p>
@@ -19,6 +21,7 @@
     <p class="menu-item" id="create"><a href="worldBuilding.html">World Building</a></p>
 </nav>
 <div class="main">
+
     <p class="category"><a href="createHero.html">Create a Hero!</a></p>
     <p class="category"><a href="skillsReferance.html">Skills Reference</a></p>
     <p class="category"><a href="worldBuilding.html"> World Building</a></p>
