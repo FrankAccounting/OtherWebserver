@@ -35,9 +35,6 @@
             <td><label>weight</label></td>
             <td><form:input path="weight"/>
                 <form:errors path="weight" cssClass="error"/></td>
-
-
-
         </tr>
     </table>
 
@@ -46,8 +43,5 @@
         <td><input type="submit" value="Save" class="save"></td>
     </tr>
 </form:form>
-
-
-
 </body>
 </html>

@@ -68,7 +68,7 @@ public class GearController {
     public  String search(@RequestParam("searchTerm")
                           String theSearchTerm, Model theModel){
         List<Gear> list = gearService.getGearByName(theSearchTerm);
-        theModel.addAttribute("gear",list);
+        theModel.addAttribute("gearList",list);
         return "list-gear";
 
     }

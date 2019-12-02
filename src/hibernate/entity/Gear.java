@@ -2,6 +2,8 @@ package hibernate.entity;
 
 import javax.persistence.*;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -20,13 +22,14 @@ public class Gear {
     private String name;
 
     @NotNull(message = "Required")
-    @Size(min = 1, max = 3,  message = "1-3 characters")
+    @Min(value = 1 ,  message = "1-3 characters")
+    @Max(value = 100 ,  message = "1-3 characters")
     @Column(name = "DMG")
     private int damage;
 
     @NotNull(message = "Required")
-    @Size(min = 1, max = 3,  message = "1-3 characters")
-    @Column(name = "WEIGHT")
+    @Min(value = 1 ,  message = "1-3 characters")
+    @Max(value = 100 ,  message = "1-3 characters")
     private int weight;
 
     @NotNull
@@ -35,8 +38,8 @@ public class Gear {
     private String description;
 
     @NotNull(message = "Required")
-    @Size(min = 1, max = 7,  message = "1-7 characters")
-    @Column(name = "PRICE")
+    @Min(value = 1 ,  message = "1-3 characters")
+    @Max(value = 100 ,  message = "1-3 characters")
     private int price;
 
     public Gear() {

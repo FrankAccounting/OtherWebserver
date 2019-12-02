@@ -53,7 +53,7 @@ public class GearDaoImpl implements GearDao {
     @Override
     public List<Gear> getGearByName(String theSearchTerm){
         Session session = sessionFactory.getCurrentSession();
-        Query<Gear> query = session.createQuery("from Gear where lower(name) like: searchTerm");
+        Query<Gear> query = session.createQuery("from Gear where lower(name) like :searchTerm");
         theSearchTerm = "%" + theSearchTerm.toLowerCase() + "%";
         query.setParameter("searchTerm",theSearchTerm);
         return query.getResultList();
