@@ -9,7 +9,7 @@
 <header class="header">
     <img src="img/logo.jpg" height="177" width="236" alt="World Bible Logo">
     <h1>Savage Builder</h1>
-    <h2>http://localhost:8080/dragon/gear/list  for final stuff</h2>
+    <h2> For the final exam! -------> http://localhost:8080/dragon/gear/list</h2>
 
 </header>
 <nav class="navigation">
